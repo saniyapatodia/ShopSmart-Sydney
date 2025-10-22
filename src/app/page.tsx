@@ -170,8 +170,20 @@ export default function Home() {
               <h3 className="text-xl font-semibold text-black">
                 Price Comparison Results
               </h3>
-              <div className="text-sm text-gray-600">
-                {results.length} result{results.length !== 1 ? 's' : ''} found
+              <div className="flex items-center gap-4">
+                <div className="text-sm text-gray-600">
+                  {results.length} result{results.length !== 1 ? 's' : ''} found
+                </div>
+                <button
+                  onClick={() => {
+                    setSearchQuery('')
+                    setResults([])
+                    setFilters({})
+                  }}
+                  className="px-4 py-2 bg-orange-500 text-white rounded-lg text-sm font-medium hover:bg-orange-600 transition-colors"
+                >
+                  Search for More
+                </button>
               </div>
             </div>
           </div>
